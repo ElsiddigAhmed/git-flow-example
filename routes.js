@@ -1,6 +1,13 @@
 const express = require("express");
 let router = express.Router();
 
+router.get("/home", (req, res) => {
+    res.status(200).json({
+        "Home page": "hello world",
+        "version": "1.0.0",
+    });
+});
+
 router.get("/", (req, res) => {
     res.status(200).json({
         "App Name": "git flow example",
