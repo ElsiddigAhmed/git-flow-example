@@ -3,9 +3,6 @@ const config = require("./config/config.js");
 
 const app = express();
 
-const port = config.port;
-const host = config.host;
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
