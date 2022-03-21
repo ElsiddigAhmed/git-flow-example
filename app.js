@@ -1,4 +1,4 @@
-const  express  = require("express");
+const express = require("express");
 const config = require("./config/config.js");
 const router = require("./routes");
 
@@ -11,9 +11,10 @@ app.use("/", router);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+console.log("", process.env.APP_PORT);
 
-app.listen("1200", "localhost", () => {
-    console.log(`Server Listening at http://${host}:${port}`);
-
-   
-});   
+app.listen(process.env.APP_PORT, "localhost", () => {
+  console.log(
+    `Server Listening at http://${process.env.APP_HOST}:${process.env.APP_PORT}`
+  );
+});
